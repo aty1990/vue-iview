@@ -23,6 +23,11 @@ module.exports = merge(baseWebpackConfig, {
       // 'process.env': config.dev.env
       'process.env.NODE_ENV': '"production"'
     }),
+    // 引入jquery
+    new webpack.ProvidePlugin({
+        jQuery : 'jquery',
+        $ : 'jquery'
+    }),
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),

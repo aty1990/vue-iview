@@ -19,18 +19,29 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json','.css','.less'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      '@': resolve('src'),
+      'jquery': 'jquery' 
     }
   },
   module: {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        options: vueLoaderConfig
+        use: [
+            {
+                loader: 'vue-loader',
+                options: vueLoaderConfig
+            },
+            {
+                loader: 'iview-loader',
+                options: {
+                    prefix: true
+                }
+            }
+        ]
       },
       {
         test: /\.js$/,
