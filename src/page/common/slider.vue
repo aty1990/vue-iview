@@ -22,23 +22,24 @@
     </div>
     <div class="layout-body">
       <div class="layout-tab">
-        <Row type="flex">
-          <i-col span="24">
-            <ul class="layout-tab-title">
-              <li v-for="(tabs,$index) in headTabs" :class="{'layout-tab-actived' : tabs.select}" @click="tabClick(tabs,$index)">
-                {{tabs.nodeName}}
-                <!--<router-link :to="tabs.reflink">{{tabs.nodeName}}</router-link>-->
-                <!--<a href="javascript:;">{{tabs.nodeName}}</a>-->
-              </li>
-            </ul>
-          </i-col>
-        </Row>
+          <Row type="flex">
+               <i-col span="24">
+                 <ul class="layout-tab-title">
+                   <li v-for="(tabs,$index) in headTabs" :class="{'layout-tab-actived' : tabs.select}" @click="tabClick(tabs,$index)">
+                     {{tabs.nodeName}}
+                     <!--<router-link :to="tabs.reflink">{{tabs.nodeName}}</router-link>-->
+                     <!--<a href="javascript:;">{{tabs.nodeName}}</a>-->
+                     <span  @click.stop="removeTab($index)"><Icon v-if="$index>0" type="close-circled"></Icon></span>
+                   </li>
+                 </ul>
+               </i-col>
+          </Row>
       </div>
       <div class="layout-content">
         <Row type="flex">
-          <i-col span="24">
+            <i-col span="24">
             <keep-alive>
-              <router-view></router-view>
+                <router-view></router-view>
             </keep-alive>
           </i-col>
         </Row>
@@ -142,13 +143,22 @@
            this.changActive();
            this.$router.push(n.reflink);
            this.headTabs[i].select=!this.headTabs[i].select
-      },
-      changeSelect(n,i,p){
+        },
+        changeSelect(n,i,p){
 
-      },
-      hash(e){
-        return this.$route.path.replace('/','');
-      }
+        },
+        hash(e){
+            return this.$route.path.replace('/','');
+        },
+        removeTab(idx){
+            if(idx===0){
+                return;
+            }else{
+                this.tabClick(this.headTabs[idx-1],idx-1);
+                this.headTabs.splice(idx, 1); 
+            }
+            
+        }
     },
     created(){
 //      Bus.$on('getTarget',function(d){

@@ -52,11 +52,10 @@
   left: 210px;
   right: 0;
   top: 70px;
-  bottom: 44px;
+  bottom: 0;
   z-index: 800;
   width: auto;
   overflow: hidden;
-  overflow-y: auto;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -68,7 +67,8 @@
   bottom: 0;
   left:0;
   right:0;
-  background: #f2f2f2;
+  background: #fff;
+  overflow-y: auto;
   padding:15px;
 }
 .ivu-menu .ivu-menu-item-selected a{
@@ -87,6 +87,9 @@
 }
 .bt100{
   width: 100px;
+}
+.layout-tab-title{
+  border-bottom: 1px solid red;
 }
 /*.ivu-menu-item a{*/
   /*display:block;*/
