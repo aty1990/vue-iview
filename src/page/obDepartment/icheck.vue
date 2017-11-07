@@ -31,6 +31,8 @@
         <br>
 
         <v-demo2></v-demo2> 
+
+        <v-demo3></v-demo3> 
   </div>
 </template>
 <script>
@@ -38,9 +40,10 @@
     import 'swiper/dist/css/swiper.min.css';
     import vDemo1 from '@/page/component/demo1'; 
     import vDemo2 from '@/page/component/demo2'; 
+    import vDemo3 from '@/page/component/demo3'; 
     export default {
          components:{
-           vDemo1,vDemo2
+           vDemo1,vDemo2,vDemo3
         },
         mounted(){
            var swiper = new Swiper('.icheck-box .swiper-container', {
