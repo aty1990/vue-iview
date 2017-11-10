@@ -108,6 +108,18 @@ ymzs.nav=[
         select:false,
         reflink: '/obd/5'
     }]
+  },
+  {
+    nodeName: "vuex",
+    nodeId: 'node4',
+    isActive: false,
+    childrens: [{
+        nodeName: 'vuex',
+        nodeId: 'node4-1',
+        parentId:'node40',
+        select:false,
+        reflink: '/obd/vuex/article'
+    }]
   }
 ];
   console.info(config);

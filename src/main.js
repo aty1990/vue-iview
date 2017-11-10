@@ -4,15 +4,18 @@ import Vue from 'vue'
 /*引用入口app的vue文件*/
 import App from './App'
 import Router from './router' // 路由列表
+import store from '@/vuex/store'
 import iView from 'iview'            //引入iviewUI
 import 'iview/dist/styles/iview.css' // 使用 iview CSS
 import '@/assets/css/sprite.css' 
 import '@/assets/css/style.css' 
 import '@/my-theme/index.less'
 
+
 /*Vue.config.productionTip = false;*/
 
 Vue.use(iView);
+
 
 Router.beforeEach((to, from, next) => {
     iView.LoadingBar.start();
@@ -23,9 +26,9 @@ Router.afterEach(route => {
     iView.LoadingBar.finish();
 });
 
-
 new Vue({
 	el: '#app',
 	router: Router,
+	store,
 	render: h => h(App)
 });

@@ -26,6 +26,14 @@ export  default new Router({
             {path:'/obd/16', component:resolve=>require(['@/page/obDepartment/timeline.vue'],resolve)},
             {path:'/obd/17', component:resolve=>require(['@/page/obDepartment/scroll.vue'],resolve)},
             {path:'/obd/18', component:resolve=>require(['@/page/obDepartment/steps.vue'],resolve)},
+            {
+                path:'/obd/vuex', 
+                name : 'vuex',
+                component:resolve=>require(['@/page/obDepartment/vuex.vue'],resolve),
+                children:[
+                    { path:'/obd/vuex/article', component:resolve=>require(['@/page/obDepartment/article.vue'],resolve)}
+                ]
+            },
             {path:'*',component:resolve=>require(['@/page/404.vue'],resolve)}
           ]
     },{

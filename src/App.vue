@@ -6,8 +6,9 @@
 <script>
     import './assets/css/base/common.css';
     import './assets/css/base/global.css';
+   
     export default {
-      name: 'app'
+      
     }
 </script>
 
