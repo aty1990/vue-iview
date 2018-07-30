@@ -86,13 +86,18 @@
         <Col span="3"> <Button type="primary" class="bt100">建档</Button></Col>
         <Col span="3"> <Button type="primary" class="bt100">编辑</Button></Col>
         <Col span="3"> <Button type="primary" class="bt100">接种</Button></Col>
-        <Col span="3"> <Button type="primary" class="bt100">打印</Button></Col>
+        <Col span="3"> <Button type="primary" class="bt100" @click="print">打印</Button></Col>
         <!--</col>-->
       </Row>
       <br>
       <Row>
         <Table border :context="self" :columns="columns4" :data="data1"></Table>
       </Row>
+
+      <div>{{ $t("message.hello") }}</div>
+
+
+
     </div>
 
 </template>
@@ -235,22 +240,22 @@
       }
     },
     methods:{
-      show(i){
-          debugger;
+        show(i){
             alert('sdsd')
         },
-      cc(name){
-          debugger;
+        cc(name){
           alert(1)
-      }
+        },
+        print(){
+            this._i18n.locale = this._i18n.locale=="en"?"zh":"en";
+        }
     },
     activated(){
-//      this.sendrouter();
-    },created(){
-        debugger;
-        function Person(){
-
-        }
+        //this.sendrouter();
+    },
+    created(){
+        //debugger;
+        function Person(){}
         var person=new Person();
     }
   }
