@@ -18,8 +18,6 @@ import VueI18n from 'vue-i18n'
 Vue.use(iView);
 Vue.use(VueI18n);
 
-
-
 const messages = {
     zh: {
       message: {

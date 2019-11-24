@@ -13,7 +13,7 @@ export  default new Router({
           name:'obd',
           component:resolve=>require(['@/page/home.vue'],resolve),
           children:[
-            {path:'/obd/1', component:resolve=>require(['@/page/obDepartment/putOnRecord.vue'],resolve)},
+            {path:'/obd/1', component:resolve=>require(['@/page/home/index.vue'],resolve)},
             {path:'/obd/2', component:resolve=>require(['@/page/obDepartment/inoAnalysis.vue'],resolve)},
             {path:'/obd/3', component:resolve=>require(['@/page/obDepartment/icheck.vue'],resolve)},
             {path:'/obd/4', component:resolve=>require(['@/page/obDepartment/haha.vue'],resolve)},
